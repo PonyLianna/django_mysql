@@ -25,7 +25,7 @@ SECRET_KEY = 'o0!u7t+yo!)(lbmkangkecp$h9%)w98_tck5@)$^#(w&k)=l6i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,8 +123,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
